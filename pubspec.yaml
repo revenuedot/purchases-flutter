@@ -1,10 +1,11 @@
 name: purchases_flutter
 description: Flutter in-app purchases and subscriptions made easy. The plugin supports iOS, macOS and Android.
 version: 10.13.2
-homepage: https://www.revenuecat.com/
-repository: https://github.com/RevenueCat/purchases-flutter
-issue_tracker: https://github.com/RevenueCat/purchases-flutter/issues
-documentation: https://docs.revenuecat.com/docs
+publish_to: none # RevenueDot fork: installed from git; the package name is kept so imports keep working
+homepage: https://revenuedot.app
+repository: https://github.com/revenuedot/purchases-flutter
+issue_tracker: https://github.com/revenuedot/purchases-flutter/issues
+documentation: https://revenuedot.app/docs
 
 environment:
   sdk: ">=3.4.0 <4.0.0"

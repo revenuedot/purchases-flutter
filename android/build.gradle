@@ -57,5 +57,5 @@ android {
 }
 
 dependencies {
-    implementation "com.revenuecat.purchases:purchases-hybrid-common:$common_version"
+    implementation "app.revenuedot.purchases:purchases-hybrid-common:$common_version"
 }

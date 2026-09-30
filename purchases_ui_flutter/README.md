@@ -1,3 +1,12 @@
+<!-- revenuedot:banner:start -->
+> [!NOTE]
+> **Fork of RevenueCat's MIT SDK, maintained by RevenueDot, not affiliated with RevenueCat.** It keeps the upstream public API (`Purchases.configure`, `Purchases.shared`, every class and method name), so app code and RevenueCat's guides work unchanged. It talks to [RevenueDot](https://github.com/revenuedot/revenuedot) at `https://api.revenuedot.app` by default (`setProxyURL` still points it at a self-hosted server) and verifies RevenueDot's response signatures. RevenueCat's copyright notice is kept in `LICENSE`. Patches: [scripts/forks](https://github.com/revenuedot/revenuedot/tree/main/scripts/forks). **Status: pre-alpha, not yet published to package registries.**
+>
+> **Install:** `purchases_ui_flutter: { git: { url: https://github.com/revenuedot/purchases-flutter.git, path: purchases_ui_flutter, ref: <version>-revenuedot } }`.
+>
+> The upstream README follows, unchanged. Where it says RevenueCat's dashboard or API, use RevenueDot's.
+<!-- revenuedot:banner:end -->
+
 <p align="center">
   <img src="https://uploads-ssl.webflow.com/5e2613cf294dc30503dcefb7/5e752025f8c3a31d56a51408_logo_red%20(1).svg" width="350" alt="RevenueCat"/>
 <br>
