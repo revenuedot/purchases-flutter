@@ -1,3 +1,6 @@
+> [!NOTE]
+> **RevenueDot fork.** This is [RevenueDot](https://github.com/revenuedot/revenuedot)'s MIT-licensed fork of RevenueCat's `purchases-flutter`, kept in sync with upstream. It keeps the same API, so existing RevenueCat integrations keep working, and it works with the open-source RevenueDot server, self-hosted or in RevenueDot Cloud. **Status: pre-alpha.** RevenueDot builds of this SDK are not published to package registries yet; the text below is the upstream README. RevenueDot is not affiliated with RevenueCat, Inc.
+
 <p align="center">
   <img src="https://uploads-ssl.webflow.com/5e2613cf294dc30503dcefb7/5e752025f8c3a31d56a51408_logo_red%20(1).svg" width="350" alt="RevenueCat"/>
 <br>
