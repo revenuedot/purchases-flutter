@@ -2,7 +2,7 @@ group 'com.revenuecat.purchases_flutter'
 version '10.13.2'
 
 buildscript {
-    ext.common_version = '19.3.1'
+    ext.common_version = '19.4.1'
     repositories {
         google()
         mavenCentral()
@@ -57,5 +57,5 @@ android {
 }
 
 dependencies {
-    implementation "com.revenuecat.purchases:purchases-hybrid-common:$common_version"
+    implementation "app.revenuedot.purchases:purchases-hybrid-common:$common_version"
 }

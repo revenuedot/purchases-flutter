@@ -125,6 +125,7 @@ class PurchasesFlutterPlugin {
           return _isConfigured();
         case 'checkTrialOrIntroductoryPriceEligibility':
           return _checkTrialOrIntroductoryPriceEligibility(call.arguments);
+        case 'setProxyURLString': // RevenueDot: the Dart API sends this name; upstream web only handled 'setProxyURL'
         case 'setProxyURL':
           return _setProxyURL(call.arguments);
         case 'canMakePayments':
