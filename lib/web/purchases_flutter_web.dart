@@ -320,7 +320,8 @@ class PurchasesFlutterPlugin {
         message: 'Proxy URL is required',
       );
     }
-    return _callStaticMethodReturningPromise('setProxyUrl', [proxyURL]);
+    // RevenueDot: PurchasesCommon.setProxyUrl returns void, not a promise; awaiting it as one threw on every call.
+    _callStaticMethod('setProxyUrl', [proxyURL]);
   }
 
   Future<void> _setAttributes(dynamic arguments) async {
