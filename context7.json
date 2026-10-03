@@ -1,0 +1,30 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "RevenueDot Flutter SDK",
+  "description": "RevenueDot's MIT fork of RevenueCat's Flutter SDK, pointed at RevenueDot, the open-source RevenueCat alternative for in-app purchases and subscriptions.",
+  "folders": [],
+  "excludeFolders": [
+    ".circleci",
+    ".github",
+    "fastlane",
+    ".revenuedot",
+    "scripts",
+    "api_tester",
+    "e2e-tests",
+    "example",
+    "revenuecat_examples",
+    "test",
+    ".aiexclude"
+  ],
+  "excludeFiles": [
+    "CHANGELOG.md",
+    "CHANGELOG.latest.md",
+    "CHANGELOG-LATEST.md"
+  ],
+  "rules": [
+    "Install as a git dependency on https://github.com/revenuedot/purchases-flutter with a `ref` of the upstream version plus -revenuedot. The pub.dev names purchases_flutter and purchases_ui_flutter belong to RevenueCat.",
+    "The package names stay purchases_flutter and purchases_ui_flutter, so `import 'package:purchases_flutter/purchases_flutter.dart';` keeps working.",
+    "RevenueDot Cloud (https://api.revenuedot.app) is the default API host. For a self-hosted server, call `await Purchases.setProxyURL('https://revenuedot.example.com')` before `Purchases.configure`.",
+    "Pass each app's public key from the RevenueDot dashboard to `PurchasesConfiguration`: appl_ for iOS and goog_ for Android."
+  ]
+}

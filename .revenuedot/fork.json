@@ -2,7 +2,7 @@
   "note": "Fork of RevenueCat's MIT SDK, maintained by RevenueDot, not affiliated with RevenueCat.",
   "pipeline": "https://github.com/revenuedot/revenuedot/tree/main/scripts/forks",
   "rules": "scripts/forks/rules/purchases-flutter.json",
-  "rulesSha256": "e1cc8e9605d60e491a07eea8c3aa6618884730bae58beddbf792694311811d74",
+  "rulesSha256": "5ce6e04ac75242dba632afd223e88fd5220bddf1637643791f920a94fc026cd6",
   "upstream": {
     "repo": "https://github.com/RevenueCat/purchases-flutter",
     "mergeBase": "ab1df4a8e539bbc97534b5960c42af3dad755c49"
