@@ -1,11 +1,68 @@
-<!-- revenuedot:banner:start -->
-> [!NOTE]
-> **Fork of RevenueCat's MIT SDK, maintained by RevenueDot, not affiliated with RevenueCat.** It keeps the upstream public API (`Purchases.configure`, `Purchases.shared`, every class and method name), so app code and RevenueCat's guides work unchanged. It talks to [RevenueDot](https://github.com/revenuedot/revenuedot) at `https://api.revenuedot.app` by default (`setProxyURL` still points it at a self-hosted server) and verifies RevenueDot's response signatures. RevenueCat's copyright notice is kept in `LICENSE`. Patches: [scripts/forks](https://github.com/revenuedot/revenuedot/tree/main/scripts/forks). **Status: publishing to package registries is in progress.**
->
-> **Install:** in `pubspec.yaml`, `purchases_flutter: { git: { url: https://github.com/revenuedot/purchases-flutter.git, ref: <version>-revenuedot } }`. The package name stays `purchases_flutter`, so `import 'package:purchases_flutter/purchases_flutter.dart'` keeps working. This fork also fixes `Purchases.setProxyURL` on Flutter web.
->
-> The upstream README follows, unchanged. Where it says RevenueCat's dashboard or API, use RevenueDot's.
-<!-- revenuedot:banner:end -->
+<!-- revenuedot:readme:start -->
+<p align="center"><a href="https://revenuedot.app"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/revenuedot/revenuedot/main/brand/kit/wordmark/revenuedot-lockup-white.svg">
+  <img alt="RevenueDot" src="https://raw.githubusercontent.com/revenuedot/revenuedot/main/brand/kit/wordmark/revenuedot-lockup-black.svg" height="40">
+</picture></a></p>
+
+# RevenueDot Flutter SDK
+
+This is RevenueDot's MIT fork of RevenueCat's `purchases_flutter`: the same classes and method names, pointed at a RevenueDot server ([RevenueDot Cloud](https://app.revenuedot.app/signup) at `https://api.revenuedot.app`, or one you host) with RevenueDot's response-signing key built in, and kept in sync with upstream.
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE) [![Git tag](https://img.shields.io/github/v/tag/revenuedot/purchases-flutter?filter=*-revenuedot&label=git%20dependency)](https://github.com/revenuedot/purchases-flutter/releases) [![Upstream](https://img.shields.io/badge/upstream-RevenueCat%2Fpurchases--flutter_10.13.2-lightgrey)](https://github.com/RevenueCat/purchases-flutter)
+
+## Install
+
+The package names stay `purchases_flutter` and `purchases_ui_flutter`, so every `import 'package:purchases_flutter/purchases_flutter.dart'` keeps working. The fork ships as a git dependency (the pub.dev names belong to RevenueCat):
+```yaml
+# pubspec.yaml
+dependencies:
+  purchases_flutter:
+    git:
+      url: https://github.com/revenuedot/purchases-flutter.git
+      ref: 10.13.2-revenuedot
+  purchases_ui_flutter:          # only if you use paywalls
+    git:
+      url: https://github.com/revenuedot/purchases-flutter.git
+      path: purchases_ui_flutter
+      ref: 10.13.2-revenuedot
+```
+
+## Configure
+
+```dart
+import 'dart:io' show Platform;
+import 'package:purchases_flutter/purchases_flutter.dart';
+
+Future<void> initPurchases() async {
+  // Self-hosted server only: RevenueDot Cloud (https://api.revenuedot.app) is the default.
+  await Purchases.setProxyURL('https://revenuedot.example.com');
+  await Purchases.configure(PurchasesConfiguration(Platform.isIOS ? 'appl_...' : 'goog_...'));   // each app's public key
+}
+```
+
+The fork already trusts RevenueDot's signing key, so no signature or verification setting is needed. `Purchases.setProxyURL` works on Flutter web with this fork. Full guide: https://revenuedot.app/docs/sdks/flutter.
+
+## What RevenueDot adds
+
+- **Self-host for free, or use RevenueDot Cloud** free up to $10,000 a month of tracked revenue ([pricing](https://revenuedot.app/pricing)).
+- **The same REST API and webhook payloads** as RevenueCat, so your backend and integrations keep working ([API reference](https://revenuedot.app/docs/api)).
+- **Paywalls, experiments and the Customer Center** built in the RevenueDot dashboard and rendered by this SDK ([guides](https://revenuedot.app/docs/guides)).
+- **A one-line migration:** point the stock SDK at RevenueDot with `setProxyURL`, or install this fork and drop the line ([migration guide](https://revenuedot.app/docs/migrate)).
+
+## Links
+
+- **Docs for this SDK:** https://revenuedot.app/docs/sdks/flutter
+- **Example app:** https://github.com/revenuedot/examples/tree/main/mobile/flutter
+- **Releases and changelog:** https://github.com/revenuedot/purchases-flutter/releases (tags `<upstream version>-revenuedot`; upstream's changes are in `CHANGELOG.md`)
+- **RevenueDot server and dashboard:** https://github.com/revenuedot/revenuedot
+- **Fork pipeline (what we change and how upstream is merged):** https://github.com/revenuedot/revenuedot/tree/main/scripts/forks
+
+RevenueDot is not affiliated with RevenueCat, Inc. RevenueCat's copyright notice stays in `LICENSE`; RevenueDot's changes are MIT too.
+
+---
+
+## Upstream README (RevenueCat's, unchanged)
+<!-- revenuedot:readme:end -->
 
 <p align="center">
   <img src="https://uploads-ssl.webflow.com/5e2613cf294dc30503dcefb7/5e752025f8c3a31d56a51408_logo_red%20(1).svg" width="350" alt="RevenueCat"/>
